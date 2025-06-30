@@ -1,0 +1,62 @@
+mkdir death-star
+cd death-star
+touch darth-vader.txt
+touch princess-leia.txt
+touch storm-trooper.txt
+cd ..
+mkdir galaxy-far-far-away
+cd galaxy-far-far-away
+touch luke.txt
+touch ben-kenobi.txt
+cd ..
+mkdir tatooine
+cd tatooine
+mkdir millenium-falcon
+cd millenium-falcon
+touch han-solo.txt
+touch chewbacca.txt
+cd ../..
+cp death-star/storm-trooper.txt tatooine/storm-trooper.txt
+cd galaxy-far-far-away/
+mv luke.txt ../tatooine/millenium-falcon/
+mv ben-kenobi.txt ../tatooine/millenium-falcon/
+cd ../tatooine/
+mv millenium-falcon/ ../galaxy-far-far-away/
+cd ../galaxy-far-far-away/
+mv millenium-falcon/ ../death-star/
+cd ../death-star/
+mv princess-leia.txt millenium-falcon/
+cd millenium-falcon/
+mv ben-kenobi.txt obi-wan.txt
+rm obi-wan.txt
+cd ../..
+cd galaxy-far-far-away/
+mkdir yavin-4
+mv millenium-falcon/ ../galaxy-far-far-away/yavin-4/
+mkdir x-wing
+cd millenium-falcon/
+mv princess-leia.txt  ..
+mv luke.txt ../x-wing/
+cd ..
+mv millenium-falcon/ ..
+mv x-wing/ ..
+cd ../..
+cd death-star/
+mkdir tie-fighter-1
+mkdir tie-fighter-2
+mkdir tie-fighter-3
+mv darth-vader.txt tie-fighter-1
+cp storm-trooper.txt  tie-fighter-2
+cp storm-trooper.txt  tie-fighter-3
+mv tie-fighter-1 ../galaxy-far-far-away/
+mv tie-fighter-2 ../galaxy-far-far-away/
+mv tie-fighter-3 ../galaxy-far-far-away/
+cd ../galaxy-far-far-away
+rm -rf tie-fighter-2
+rm -rf tie-fighter-3
+touch ../galaxy-far-far-away/x-wing/the-force.txt
+rm -rf ../death-star/
+mv x-wing/ yavin-4/
+mv millenium-falcon yavin-4/
+cd ../..
+rm -rf star-wars/
