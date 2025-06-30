@@ -29,6 +29,14 @@ Example: isAdult(21) should return 'Adult'.
 Complete the exercise in the space below:
 */
 
+function isAdult(age) {
+  if (age >= 21) {
+    return "Adult";
+  } else {
+    return "Minor";
+  }
+}
+
 console.log("Exercise 2 Result:", isAdult(21));
 
 /*
@@ -43,6 +51,19 @@ Example: isCharAVowel('a') should return true.
 
 Complete the exercise in the space below:
 */
+function isCharAVowel(inputChar) {
+  if (
+    inputChar === "a" ||
+    inputChar === "e" ||
+    inputChar === "i" ||
+    inputChar === "o" ||
+    inputChar === "u"
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 console.log("Exercise 3 Result:", isCharAVowel("a"));
 
@@ -58,6 +79,10 @@ should return 'johnsmith@example.com'.
 Complete the exercise in the space below:
 */
 
+function generateEmail(name, domain) {
+  return `${name}@${domain}`;
+}
+
 console.log("Exercise 4 Result:", generateEmail("johnsmith", "example.com"));
 
 /*
@@ -72,6 +97,10 @@ Example: greetUser('Sam', 'morning') should return "Good morning, Sam!"
 Complete the exercise in the space below:
 */
 
+function greetUser(name, time) {
+  return `Good ${time}, ${name}`;
+}
+
 console.log("Exercise 5 Result:", greetUser("Sam", "morning"));
 
 /*
@@ -84,6 +113,16 @@ Example: maxOfThree(17, 4, 9) should return 17.
 
 Complete the exercise in the space below:
 */
+
+function maxOfThree(num1, num2, num3) {
+  if (num1 >= num2 && num1 >= num3) {
+    return num1;
+  } else if (num2 >= num1 && num2 >= num3) {
+    return num2;
+  } else if (num3 >= num1 && num3 >= num2) {
+    return num3;
+  }
+}
 
 console.log("Exercise 6 Result:", maxOfThree(5, 10, 8));
 
@@ -98,6 +137,11 @@ Example: calculateTip(50, 20) should return 10.
 
 Complete the exercise in the space below:
 */
+
+function calculateTip(bill, tipPc) {
+  if (tipPc > 0) return bill * (tipPc / 100);
+  else return 0;
+}
 
 console.log("Exercise 7 Result:", calculateTip(50, 20));
 
@@ -115,6 +159,13 @@ Example: convertTemperature(32, 'F') should return 0 (Celsius).
 Complete the exercise in the space below:
 */
 
+function convertTemperature(temp, mode) {
+  if ((mode = "C")) {
+    return temp * (9 / 5) + 32;
+  } else if ((mode = "F")) {
+    return (temp - 32) * (5 / 9);
+  } else return undefined;
+}
 console.log("Exercise 8 Result:", convertTemperature(32, "C"));
 
 /*
@@ -132,5 +183,23 @@ Example: basicCalculator(10, 5, 'subtract') should return 5.
 
 Complete the exercise in the space below:
 */
+
+function basicCalculator(num1, num2, mode) {
+  switch (mode) {
+    case "add":
+      return num1 + num2;
+    case "subtract":
+      return num1 - num2;
+    case "multiply":
+      return num1 * num2;
+    case "divide":
+      if (num2 != 0) {
+        //prevent division by zero errors
+        return num1 / num2;
+      } else {
+        return undefined;
+      }
+  }
+}
 
 console.log("Exercise 9 Result:", basicCalculator(10, 5, "subtract"));
