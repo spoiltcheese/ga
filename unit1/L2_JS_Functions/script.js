@@ -52,16 +52,15 @@ Example: isCharAVowel('a') should return true.
 Complete the exercise in the space below:
 */
 function isCharAVowel(inputChar) {
-  if (
-    inputChar === "a" ||
-    inputChar === "e" ||
-    inputChar === "i" ||
-    inputChar === "o" ||
-    inputChar === "u"
-  ) {
-    return true;
-  } else {
-    return false;
+  switch (inputChar) {
+    case "a":
+    case "e":
+    case "i":
+    case "o":
+    case "u":
+      return true;
+    default:
+      return false;
   }
 }
 
@@ -115,17 +114,25 @@ Complete the exercise in the space below:
 */
 
 function maxOfThree(num1, num2, num3) {
-  if (num1 >= num2 && num1 >= num3) {
-    return num1;
-  } else if (num2 >= num1 && num2 >= num3) {
-    return num2;
-  } else if (num3 >= num1 && num3 >= num2) {
-    return num3;
+  return Math.max(num1, num2, num3);
+}
+
+function max(...args) {
+  if (args.length > 0) {
+    let m = args[0];
+    for (let a of args) {
+      if (a > m) m = a;
+    }
+
+    return m;
+  } else {
+    return undefined;
   }
 }
 
 console.log("Exercise 6 Result:", maxOfThree(5, 10, 8));
 
+//console.log(max(5, 10, 8));
 /*
 Exercise 7: calculateTip()
 
